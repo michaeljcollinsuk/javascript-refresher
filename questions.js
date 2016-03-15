@@ -138,21 +138,52 @@ var calculateAverage = function(array) {
 
 var getElementsUntilGreaterThanFive = function(array) {
   var answer = [];
-  array.some(function (num) {
+  array.some(function(num) {
     if (num > 5) {
       return true;
     }
     answer.push(num);
   });
   return answer;
+  // var answer = [];
+  // for (var i = 0; array[i] <= 5; i++) {
+  //   answer.push(array[i]);
+  // }
+  // return answer;
 };
 
 var convertArrayToObject = function(array) {
-  return 'Write your method here';
+  var answer = {};
+  var newArr = [];
+  var i = 0;
+  while ( array.length > 0 ) {
+    newArr.push(array.splice(0,2));
+  }
+  for ( i = 0; i < newArr.length; i++) {
+    answer[newArr[i][0]] = newArr[i][1];
+  }
+  return answer;
 };
 
 var getAllLetters = function(array) {
-  return 'Write your method here';
+  var newArr = [];
+  function letters(string) {
+    newArr.push(string.split(''));
+  }
+  array.forEach(letters);
+  var lettersArray = newArr.reduce(function(a,b){
+    return a.concat(b);
+  });
+ // removes duplicates
+  var solution = [];
+  for (var i = 0; i < lettersArray.length; i++) {
+    var current = lettersArray[i];
+    if (solution.indexOf(current) < 0 ) {
+      solution.push(current);
+    }
+  }
+
+  return solution.sort();
 };
 
 var swapKeysAndValues = function(object) {
