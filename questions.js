@@ -187,27 +187,46 @@ var getAllLetters = function(array) {
 };
 
 var swapKeysAndValues = function(object) {
-  return 'Write your method here';
+  var keys = Object.keys(object);
+  var values = [];
+  for (var key in object) {
+    values.push(object[key]);
+  }
+  var newObj = {};
+  for (var i in keys) {
+    newObj[values[i]] = keys[i];
+  }
+  return newObj;
 };
 
 var sumKeysAndValues = function(object) {
-  return 'Write your method here';
+  var nums = Object.keys(object);
+  for (var key in object) {
+    nums.push(object[key]);
+  }
+  var total = 0;
+  for (var i in nums) {
+    total += parseInt(nums[i]);
+  }
+  return total;
 };
 
 var removeCapitals = function(string) {
-  return 'Write your method here';
+  return string.replace( /[A-Z]/g, '');
 };
 
 var roundUp = function(number) {
-  return 'Write your method here';
+  return Math.ceil(number);
 };
 
 var formatDateNicely = function(date) {
-  return 'Write your method here';
+  var str = '';
+  return str += '0' + date.getDate() + '/' + '0' + (date.getMonth() + 1) + '/' + date.getFullYear() ;
 };
 
 var getDomainName = function(string) {
-  return 'Write your method here';
+  // var a = string.split(/[@.]/);
+  // console.log(a);
 };
 
 var titleize = function(string) {
@@ -219,11 +238,15 @@ var checkForSpecialCharacters = function(string) {
 };
 
 var squareRoot = function(number) {
-  return 'Write your method here';
+  return Math.sqrt(number);
 };
 
 var factorial = function(number) {
-  return 'Write your method here';
+  var total = number;
+  for (var i = number-1; i > 0; i--) {
+    total *= i;
+  }
+  return total;
 };
 
 var findAnagrams = function(string) {
@@ -231,7 +254,7 @@ var findAnagrams = function(string) {
 };
 
 var convertToCelsius = function(number) {
-  return 'Write your method here';
+  return Math.round((5/9) * (number -32));
 };
 
 var letterPosition = function(array) {
