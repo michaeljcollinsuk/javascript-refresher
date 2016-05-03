@@ -258,5 +258,7 @@ var convertToCelsius = function(number) {
 };
 
 var letterPosition = function(array) {
-  return 'Write your method here';
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  function position(letter) { return alphabet.indexOf(letter.toLowerCase()) + 1; }
+  return array.map(position);
 };
